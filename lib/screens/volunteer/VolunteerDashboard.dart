@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/auth/SupabaseServices.dart';
-import 'package:flutter_application_1/screens/volunteer/CommunityPage.dart';
-import 'package:flutter_application_1/screens/volunteer/AlertScreen.dart';
-import 'package:flutter_application_1/screens/volunteer/profilePage.dart';
-import 'package:flutter_application_1/screens/users/LoginPage.dart';
+import 'package:petpal_animal_rescue/auth/SupabaseServices.dart';
+import 'package:petpal_animal_rescue/screens/volunteer/CommunityPage.dart';
+import 'package:petpal_animal_rescue/screens/volunteer/AlertScreen.dart';
+import 'package:petpal_animal_rescue/screens/volunteer/profilePage.dart';
+import 'package:petpal_animal_rescue/screens/users/LoginPage.dart';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/auth/SupabaseServices.dart';
-import 'package:flutter_application_1/screens/users/RegisterPage.dart';
-import 'package:flutter_application_1/screens/users/HomePage.dart';
-import 'package:flutter_application_1/screens/volunteer/VolunteerDashboard.dart';
+import 'package:petpal_animal_rescue/auth/SupabaseServices.dart';
+import 'package:petpal_animal_rescue/screens/users/RegisterPage.dart';
+import 'package:petpal_animal_rescue/screens/users/HomePage.dart';
+import 'package:petpal_animal_rescue/screens/volunteer/VolunteerDashboard.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});

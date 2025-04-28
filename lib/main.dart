@@ -1,13 +1,26 @@
 import 'dart:async';
 import 'package:awesome_notifications/awesome_notifications.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/service/notification_controller.dart';
-import 'package:flutter_application_1/service/volunteer_notification.dart';
+import 'package:petpal_animal_rescue/service/notification_controller.dart';
+import 'package:petpal_animal_rescue/service/volunteer_notification.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:flutter_application_1/screens/users/LoginPage.dart';
-import 'package:flutter_application_1/screens/users/HomePage.dart';
-import 'package:flutter_application_1/screens/volunteer/VolunteerDashboard.dart';
-import 'package:flutter_application_1/service/notification_service.dart';
+import 'package:petpal_animal_rescue/screens/users/LoginPage.dart';
+import 'package:petpal_animal_rescue/screens/users/HomePage.dart';
+import 'package:petpal_animal_rescue/screens/volunteer/VolunteerDashboard.dart';
+import 'package:petpal_animal_rescue/service/notification_service.dart';
+import 'package:provider/provider.dart';
+
+class ThemeProvider extends ChangeNotifier {
+  bool _isDarkMode = false;
+  bool get isDarkMode => _isDarkMode;
+
+  ThemeMode get themeMode => _isDarkMode ? ThemeMode.dark : ThemeMode.light;
+
+  void toggleTheme(bool isOn) {
+    _isDarkMode = isOn;
+    notifyListeners();
+  }
+}
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,7 +34,12 @@ void main() async {
   await NotificationService.initialize();
   await VolunteerNotifier.initialize();
 
-  runApp(const MyApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (_) => ThemeProvider(),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -29,11 +47,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final themeProvider = Provider.of<ThemeProvider>(context);
     return MaterialApp(
       title: 'NGO Animal Rescue',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        brightness: Brightness.light,
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+        primarySwatch: Colors.blue,
+      ),
+      themeMode: themeProvider.themeMode,
       home: const AuthWrapper(),
     );
   }

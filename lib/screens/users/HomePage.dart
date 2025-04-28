@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/users/LoginPage.dart';
-import 'package:flutter_application_1/auth/SupabaseServices.dart';
-import 'package:flutter_application_1/screens/users/camera_screen.dart';
+import 'package:petpal_animal_rescue/screens/users/LoginPage.dart';
+import 'package:petpal_animal_rescue/auth/SupabaseServices.dart';
+import 'package:petpal_animal_rescue/screens/users/camera_screen.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-import 'package:flutter_application_1/screens/users/profile-page.dart';
-import 'package:flutter_application_1/screens/users/community_page.dart'; // Add this import
+import 'package:petpal_animal_rescue/screens/users/profile-page.dart';
+import 'package:petpal_animal_rescue/screens/users/community_page.dart'; // Add this import
 
 final supabase = Supabase.instance.client;
 

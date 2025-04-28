@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:image_picker/image_picker.dart';
 import '../../auth/SupabaseServices.dart';
-import 'package:flutter_application_1/screens/users/permission_handler.dart';
-import 'package:flutter_application_1/screens/users/HomePage.dart';
+import 'package:petpal_animal_rescue/screens/users/permission_handler.dart';
+import 'package:petpal_animal_rescue/screens/users/HomePage.dart';
 import 'package:google_mlkit_image_labeling/google_mlkit_image_labeling.dart';
-import 'package:flutter_application_1/service/notification_service.dart';
+import 'package:petpal_animal_rescue/service/notification_service.dart';
 
 class CameraScreen extends StatefulWidget {
   const CameraScreen({super.key});

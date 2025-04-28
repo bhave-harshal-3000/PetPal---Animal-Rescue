@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/volunteer/RescueOperationScreen.dart';
+import 'package:petpal_animal_rescue/screens/volunteer/RescueOperationScreen.dart';
 import 'package:timeago/timeago.dart' as timeago;
 import 'package:url_launcher/url_launcher.dart';
-import 'package:flutter_application_1/auth/SupabaseServices.dart';
+import 'package:petpal_animal_rescue/auth/SupabaseServices.dart';
 import 'package:flutter/services.dart';
 
 class ReportDetailsScreen extends StatelessWidget {

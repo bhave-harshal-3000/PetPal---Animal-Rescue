@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:flutter_application_1/auth/SupabaseServices.dart';
-import 'package:flutter_application_1/screens/users/LoginPage.dart';
+import 'package:petpal_animal_rescue/auth/SupabaseServices.dart';
+import 'package:petpal_animal_rescue/screens/users/LoginPage.dart';
+import 'package:provider/provider.dart';
+import '../../../main.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({super.key});
@@ -11,7 +13,6 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
-  bool isDarkMode = false;
   bool isLoading = true;
   Map<String, dynamic>? userData;
   final SupabaseService supabaseService = SupabaseService();
@@ -171,9 +172,9 @@ class _ProfilePageState extends State<ProfilePage> {
     }
 
     return Scaffold(
-      backgroundColor: const Color(0xFFFFFAE7),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xFFFFFAE7),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         elevation: 0,
         leading: IconButton(
           icon: Container(
@@ -186,10 +187,10 @@ class _ProfilePageState extends State<ProfilePage> {
           ),
           onPressed: () => Navigator.pop(context),
         ),
-        title: const Text(
+        title: Text(
           'Profile',
           style: TextStyle(
-            color: Color(0xFF1A237E),
+            color: Theme.of(context).colorScheme.primary,
             fontSize: 24,
             fontWeight: FontWeight.w600,
           ),
@@ -313,7 +314,7 @@ class _ProfilePageState extends State<ProfilePage> {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).cardColor,
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
@@ -383,7 +384,7 @@ class _ProfilePageState extends State<ProfilePage> {
             Container(
               margin: const EdgeInsets.symmetric(horizontal: 16),
               decoration: BoxDecoration(
-                color: Colors.white,
+                color: Theme.of(context).cardColor,
                 borderRadius: BorderRadius.circular(16),
                 boxShadow: [
                   BoxShadow(
@@ -410,12 +411,12 @@ class _ProfilePageState extends State<ProfilePage> {
                               color: Color(0xFF4ABECD)),
                         ),
                         const SizedBox(width: 12),
-                        const Text(
+                        Text(
                           'General Settings',
                           style: TextStyle(
                             fontSize: 18,
                             fontWeight: FontWeight.bold,
-                            color: Color(0xFF1A237E),
+                            color: Theme.of(context).colorScheme.primary,
                           ),
                         ),
                       ],
@@ -427,11 +428,9 @@ class _ProfilePageState extends State<ProfilePage> {
                     title: 'Mode',
                     subtitle: 'Dark & Light',
                     showToggle: true,
-                    isToggled: isDarkMode,
+                    isToggled: Provider.of<ThemeProvider>(context).isDarkMode,
                     onToggle: (value) {
-                      setState(() {
-                        isDarkMode = value;
-                      });
+                      Provider.of<ThemeProvider>(context, listen: false).toggleTheme(value);
                     },
                   ),
                   const Divider(),

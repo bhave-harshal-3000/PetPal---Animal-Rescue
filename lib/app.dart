@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/screens/users/LoginPage.dart';
+import 'package:petpal_animal_rescue/screens/users/LoginPage.dart';
 
 class App extends StatefulWidget {
   const App({super.key});

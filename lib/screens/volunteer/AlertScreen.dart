@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/auth/SupabaseServices.dart';
+import 'package:petpal_animal_rescue/auth/SupabaseServices.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 import 'package:timeago/timeago.dart' as timeago;
-import 'package:flutter_application_1/screens/volunteer/ReportDetailsScreen.dart';
-import 'package:flutter_application_1/screens/volunteer/RescueOperationScreen.dart';
+import 'package:petpal_animal_rescue/screens/volunteer/ReportDetailsScreen.dart';
+import 'package:petpal_animal_rescue/screens/volunteer/RescueOperationScreen.dart';
 
 class AlertScreen extends StatefulWidget {
   const AlertScreen({super.key});

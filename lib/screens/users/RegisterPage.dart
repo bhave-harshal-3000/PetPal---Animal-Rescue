@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/auth/SupabaseServices.dart';
+import 'package:petpal_animal_rescue/auth/SupabaseServices.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
