@@ -25,7 +25,11 @@
     </queries>
 
     <application
+<<<<<<< HEAD
         android:label="flutter_application_1"
+=======
+        android:label="PetPal - Animal Rescue"
+>>>>>>> 98efd8adff75be1ca3a9efcf4f6e70546245a2ca
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">
         
